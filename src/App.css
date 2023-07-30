@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  margin: 5rem;
+  
+}
+.background.background--active{
+  background-color: black;
 }
 
 .App-logo {

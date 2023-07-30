@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [active,setActive] = useState(false);
+  let backgroundClassname = "background";
+  let pictureClassname = "picture";
+  if(active){
+    pictureClassname += " picture--active";
+  }
+  else{
+    backgroundClassname += " background--active"
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div onClick={(e)=>{e.stopPropagation();setActive(false)}} id="hello" className={backgroundClassname}>
+      <img  onClick={()=>setActive(true)}
+        className={pictureClassname}
+        alt="Rainbow houses in Kampung Pelangi, Indonesia"
+        src="https://i.imgur.com/5qwVYb1.jpeg"
+      />
+    </div>
     </div>
   );
 }
