@@ -41,3 +41,10 @@
     transform: rotate(360deg);
   }
 }
+
+.edit{
+  margin-right: 3rem;
+}
+.delete{
+  margin-left: 5rem;
+}
